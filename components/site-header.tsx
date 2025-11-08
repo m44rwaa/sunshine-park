@@ -20,11 +20,11 @@ export function SiteHeader() {
             height={48}
             className="h-12 w-auto"
           />
-          <span className="text-xl font-bold text-primary">Sunshine Park</span>
+          <span className="text-2xl font-serif font-bold text-[#F59E0B]">Sunshine Park</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 md:flex">
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Home
           </Link>
@@ -37,12 +37,14 @@ export function SiteHeader() {
           <Link href="/promotions" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Promotions
           </Link>
-          <Link href="/login">
-            <Button variant="outline" size="sm">
-              Login
-            </Button>
-          </Link>
         </nav>
+
+        {/* Login Button - Right Side */}
+        <Link href="/login" className="hidden md:block">
+          <Button variant="outline" size="sm">
+            Login
+          </Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
